@@ -1,0 +1,112 @@
+﻿* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	padding: 50px;
+}
+
+table {
+	table-layout: fixed;
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+
+.doneButton {
+	padding: 7px 17px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+.divider {
+	width: 5px;
+	height: auto;
+	display: inline-block;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(255,255,255); /* Fallback color */
+	background-color: rgba(255,255,255,0.4); /* Black w/ opacity */
+}
+
+.modalWidth {
+	width: 30%; /* Full width */
+}
+
+.modalWidthSettings {
+	width: 450px; /* Full width */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: white;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+	color: black;
+}
+
+/* The Close Button */
+.close {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.verticalStats {
+	display: block;
+}
+
+.verticalSettings {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.centerbuttons {
+	text-align: center;
+}
+
+.ModalForm {
+	display: inline;
+	width: 30%;
+}
+
+.ModalFormSettings {
+	width: 160px;
+}
+
+.remove:hover {
+	background: #ff6666;
+	cursor: pointer;
+}
+
+.profitbox {
+	border-style: solid;
+	border-width: 5px;
+}

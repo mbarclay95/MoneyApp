@@ -1,0 +1,51 @@
+﻿
+
+<!DOCTYPE html>
+
+@{
+	ViewBag.Title = "Entry";
+}
+
+<html>
+@Styles.Render("~/Content/css")
+<head>
+	<meta charset="utf-8" />
+	<title>Entry</title>
+	@Styles.Render("~/Content/Entry")
+	<link rel="stylesheet" type="text/css" media="all"
+		  href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+	
+</head>
+<body>
+	<br />
+	<br />
+    <h1 style="text-align:center">Welcome</h1>
+	<br />
+	<br />
+	<div id="Buttons" class="wrapper"></div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<div style="width: 100%;">
+		<div style="width: 470px; float: left;">
+			<table id="EntryTable" class="table table-bordered"></table>
+		</div>
+		<div style="width: 100px; float: left; margin-top: 160px; margin-left: 15px;">
+			<button id="submit" class="btn btn-default btn-lg doneButton" onclick="submit()">Submit</button>
+		</div>
+		<div style="width: 40%; float: left;">
+			<table id="PastTable" class="table table-bordered"></table>
+		</div>
+
+		</div>
+	<br style="clear: left;" />
+	
+		@section Scripts {
+			@Scripts.Render("~/bundles/bootstrap")
+			@Scripts.Render("~/Scripts/datatables")
+			@Scripts.Render("~/Scripts/datepicker")
+			@Scripts.Render("~/bundles/Entry")
+		}
+</body>
+</html>

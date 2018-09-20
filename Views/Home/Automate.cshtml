@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+@{
+	ViewBag.Title = "Automate";
+}
+
+<html>
+@Styles.Render("~/Content/css")
+<head>
+	<meta charset="utf-8" />
+	<title>Automate</title>
+	@Styles.Render("~/Content/Entry")
+</head>
+<body>
+	<br />
+	<br />
+	<button id="add" class="btn btn-success btn-lg" onclick="add()">Add</button>
+	<br />
+	<br />
+	<br />
+	<div class="box-body">
+		<table id="AutomateTable" style="width:100%" class="table table-bordered"></table>
+	</div>
+	<div id="addModal" class="modal modalWidth">
+		<div class="modal-content">
+			<form style="font:normal 15px monospace;">
+				Category:
+				<select id="category" class="form-control ModalForm" onclick="pickedCategory()"></select>
+			</form>
+			<br />
+			<form style="font:normal 15px monospace;" disabled>
+				SubCategory:
+				<select id="subCategory" class="form-control ModalForm"></select>
+			</form>
+			<br />
+			<form action="/action_page.php" style="font:normal 15px monospace;">
+				Day of the month:
+				<input type="text" class="form-control ModalForm" id="day" size="2" maxlength="2" value="" />
+			</form>
+			<br />
+			<form action="/action_page.php" style="font:normal 15px monospace;">
+				Amount: $
+				<input class="form-control ModalForm" type="text" id="amount" size="10" maxlength="10" value="" />
+			</form>
+			<br />
+			<br />
+			<div>
+				<button class="btn btn-primary btn-success" onclick="applyAdd()" color: black; background-color: white;" >Add and Close</button>
+				<button class="btn btn-primary btn-danger" onclick="closing1()" color: black; background-color: white;" >Cancel</button>
+			</div>
+		</div>
+	</div>
+	<div id="editModal" class="modal modalWidth">
+		<div class="modal-content">
+			<form action="/action_page.php" style="font:normal 15px monospace;">
+				Day of the month:
+				<input class="form-control ModalForm" type="text" id="editDay" size="4" maxlength="2" value="" />
+			</form>
+			<br />
+			<form action="/action_page.php" style="font:normal 15px monospace;">
+				Amount: $
+				<input class="form-control ModalForm" type="text" id="editAmount" size="10" maxlength="10" value="" />
+			</form>
+			<br />
+			<br />
+			<div>
+				<button class="btn btn-primary btn-success" onclick="editApply()" color: black; background-color: white;">Finish and Close</button>
+				<button class="btn btn-primary btn-danger" onclick="closing2()" color: black; background-color: white;">Cancel</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		var AddModal = document.getElementById('addModal');
+		var EditModal = document.getElementById('editModal');
+	</script>
+	@section Scripts {
+		@Scripts.Render("~/bundles/bootstrap")
+		@Scripts.Render("~/Scripts/datatables")
+		@Scripts.Render("~/bundles/Automate")
+	}
+</body>
+</html>

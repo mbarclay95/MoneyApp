@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+@{
+	ViewBag.Title = "Past";
+}
+
+<html>
+@Styles.Render("~/Content/css")
+<head>
+	<meta charset="utf-8" />
+	<title>Past Entries</title>
+	@Styles.Render("~/Content/Entry")
+</head>
+<body>
+	<br />
+	<br />
+	<button id="open" class="btn btn-success btn-lg" onclick="openView()">Categories and SubCategories</button>
+	<br />
+	<br />
+	<br />
+	<div class="box-body">
+		<table id="PastTable" style="width:100%" class="table table-bordered"></table>
+	</div>
+	<div id="editModal" class="modal modalWidth">
+		<div class="modal-content">
+			<form action="/action_page.php" style="font:normal 15px monospace;">
+				Amount: $
+				<input class="form-control ModalForm" type="text" id="editAmount" size="10" maxlength="10" value="" />
+			</form>
+			<br />
+			<form action="/action_page.php" style="font:normal 15px monospace;">
+				Day of the month:
+				<input class="form-control ModalForm" type="text" id="editDate" size="5" maxlength="1" value="" />
+			</form>
+			<br />
+			<br />
+			<div>
+				<button class="btn btn-primary btn-success" onclick="editApply()">Finish and Close</button>
+				<button class="btn btn-primary btn-danger" onclick="closing2()">Cancel</button>
+			</div>
+		</div>
+	</div>
+	<div id="viewModal" class="modal modalWidthSettings">
+		<div class="modal-content">
+			<div id="topButtons" class="centerbuttons">
+			</div>
+			<br />
+			<br />
+			<select id="pick" class="form-control ModalForm" style="width: 160px;" onclick="pickCategory()"></select>
+			<br />
+			<br />
+			<div style="width: 100%;">
+				<div style="width: 200px; float: left;">
+					<table id="theTable"></table>
+				</div>
+				<div id="buttonContainer" style="width: 80px; float: left; margin-top:50px;">
+				</div>
+			</div>
+			<br style="clear: left;" />
+			<br />
+			<br />
+			<div class="centerbuttons">
+				<button class="btn btn-primary btn-danger" onclick="closing1()">Close</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		var EditModal = document.getElementById('editModal');
+		var ViewModal = document.getElementById('viewModal');
+	</script>
+	@section Scripts {
+		@Scripts.Render("~/bundles/bootstrap")
+		@Scripts.Render("~/Scripts/datatables")
+		@Scripts.Render("~/Scripts/datepicker")
+		@Scripts.Render("~/bundles/Past")
+	}
+</body>
+</html>

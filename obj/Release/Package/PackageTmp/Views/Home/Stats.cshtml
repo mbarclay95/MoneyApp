@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+@{
+	ViewBag.Title = "Stats";
+}
+
+<html>
+@Styles.Render("~/Content/css")
+<head>
+	<meta charset="utf-8" />
+	<title>Stats</title>
+	<script type="text/javascript" src="~/Scripts/processing.js"></script>
+	@Styles.Render("~/Content/Entry")
+</head>
+<body>
+	<br />
+	<br />
+	<div>
+		<select id="choose" class="form-control ModalForm" onclick="chooseType()"></select>
+	</div>
+	<br />
+	<br />
+	<br />
+	<div id="DateButtons" class="centerbuttons"></div>
+	<br />
+	<h1 id="title" style="text-align:center"></h1>
+	<br />
+	<br />
+	<div id="CategoryButtons" style="float: left; width: 150px;"></div>
+	<div id="CategoryAmounts" style="float: left; width: 400px;"></div>
+	<div id="SubCategory" style="float: left; width: 150px;"></div>
+	<div id="SubCategoryAmounts" style="float: left; width: 100px;"></div>
+	<!--<div id="chartContainer" style="float: left; height: 370px; width: 400px;"></div>-->
+	<br style="clear: left;" />
+	<br />
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		@section Scripts {
+			@Scripts.Render("~/bundles/bootstrap")
+			@Scripts.Render("~/Scripts/datatables")
+			@Scripts.Render("~/Scripts/processing")
+			@Scripts.Render("~/Scripts/datepicker")
+			@Scripts.Render("~/bundles/Stats")
+		}
+</body>
+</html>
